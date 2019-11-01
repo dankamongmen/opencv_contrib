@@ -891,7 +891,7 @@ void SURF_Impl::detectAndCompute(InputArray _img, InputArray _mask,
     int imgtype = _img.type(), imgcn = CV_MAT_CN(imgtype);
     bool doDescriptors = _descriptors.needed();
 
-    CV_Assert(!_img.empty() && CV_MAT_DEPTH(imgtype) == CV_8U && (imgcn == 1 || imgcn == 3 || imgcn == 4));
+    CV_Assert(!_img.empty() /*&& CV_MAT_DEPTH(imgtype) == CV_8U */ && (imgcn == 1 || imgcn == 3 || imgcn == 4));
     CV_Assert(_descriptors.needed() || !useProvidedKeypoints);
 
 #ifdef HAVE_OPENCL

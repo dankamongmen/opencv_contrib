@@ -1119,7 +1119,7 @@ void SIFT_Impl::detectAndCompute(InputArray _image, InputArray _mask,
     int firstOctave = -1, actualNOctaves = 0, actualNLayers = 0;
     Mat image = _image.getMat(), mask = _mask.getMat();
 
-    if( image.empty() || image.depth() != CV_8U )
+    if( image.empty()/* || image.depth() != CV_8U*/ )
         CV_Error( Error::StsBadArg, "image is empty or has incorrect depth (!=CV_8U)" );
 
     if( !mask.empty() && mask.type() != CV_8UC1 )
